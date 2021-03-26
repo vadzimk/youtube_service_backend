@@ -24,14 +24,15 @@ channelRouter.get('/',
             }
         }
         if (req.query.q) {
-            q = req.query.q; //TODO needs validation
+            q = req.query.q;
         }
 
         try {
             const data = await youtubeService.fetchPage(maxResults, pageToken, q);
             res.json(data);
         } catch (e) {
-            res.send(e);
+            console.log(e.message);
+            res.json({error: e.message});
         }
 
     });

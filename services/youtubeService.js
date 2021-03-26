@@ -1,5 +1,6 @@
 import axios from 'axios';
 import config from "../config.js";
+import data from './data.js';
 
 const channelDataUrl = `https://www.googleapis.com/youtube/v3/search?\
 key=${config.API_KEY}\
@@ -19,8 +20,10 @@ const fetchPage = async (maxResults = config.DEFAULT_NUM_RESULTS, pageToken, q) 
         url = `${url}&q=${q}`;
     }
     console.log(url);
-    const res = await axios.get(url);
-    return res.data;
+    // TODO replace when quota available
+    // const res = await axios.get(url);
+    // return res.data;
+    return data;
 }
 
 const youtubeService = {fetchPage};
