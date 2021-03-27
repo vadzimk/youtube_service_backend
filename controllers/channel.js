@@ -14,7 +14,6 @@ channelRouter.get('/',
             maxResults = parseInt(req.query.maxResults);
             if (typeof maxResults !== "number") {
                 return res.status(400).json({error: 'maxResults value invalid'});
-
             }
         }
         if (req.query.pageToken) {

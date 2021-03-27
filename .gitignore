@@ -1,3 +1,5 @@
 .env
 /node_modules
 .idea
+services/data.js
+services/nextData.js
