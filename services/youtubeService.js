@@ -7,6 +7,14 @@ import config from "../config.js";
 //     return req;
 // });
 
+// axios.interceptors.response.use(res=>{
+//     // console.log(res);
+//     return res;
+// }, error => {
+//     console.log(error.response.status)
+//     return Promise.reject(error)
+// })
+
 const baseUrl = `https://www.googleapis.com/youtube/v3/search?`;
 
 const fetchPage = async (maxResults = config.DEFAULT_NUM_RESULTS, pageToken, q) => {

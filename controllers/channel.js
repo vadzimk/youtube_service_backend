@@ -31,7 +31,7 @@ channelRouter.get('/',
             res.json(data);
         } catch (e) {
             console.log(e.message);
-            res.json({error: e.message});
+            res.status(e.response.status).json({error: e.message});
         }
 
     });
